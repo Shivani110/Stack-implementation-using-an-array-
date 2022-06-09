@@ -1,0 +1,81 @@
+<html>
+<body>
+<script>
+var h = -1;
+	var n = 10000;
+	var i = Array(n).fill(0); 
+
+	function empty() 
+	{
+		return (h < 0);
+	}
+
+	function Push(a) 
+	{
+		if (h >= (n - 1)) 
+		{
+			document.write("Stack is Overflow");
+			return false;
+		} 
+		else 
+		{
+		   h+=1;
+			i[h] = a;
+			
+			document.write(a + " push into stack<br/>");
+			return true;
+		}
+	}
+
+	function Pop() 
+	{
+		if (h < 0) 
+		{
+			document.write("Stack is Underflow");
+			return 0;
+		} 
+		else 
+		{
+			var a = i[h];
+			h-=1;
+			return a;
+		}
+	}
+
+	function Peek() 
+	{
+		if (h < 0) 
+		{
+			document.write("Stack is Underflow");
+			return 0;
+		} 
+		else 
+		{
+			var a = i[h];
+			return a;
+		}
+	}
+
+	function Print() 
+	{
+		for (m = h; m > -1; m--) 
+		{
+			document.write(" " + i[m]);
+		}
+	}
+
+		Push(11);
+		Push(12);
+		Push(13);
+		Push(14);
+		Push(15);
+		
+		document.write(Pop() + " Pop from the stack<br/>");
+		document.write(Pop() + " Pop from the stack");
+		document.write("<br/>highest element is :" + Peek());
+		document.write("<br/>The elements are present in the stack : ");
+		Print();
+
+</script>
+</body>
+</html>
